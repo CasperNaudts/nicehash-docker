@@ -14,8 +14,8 @@ There are 4 ENVIRONMENT variables to configure (shown here with defaults):
 
 Eg.
 
-    docker service create --mode=global \
-      --name=miner \
+    docker service create --mode global \
+      --name nicehash-miner \
       -e BTC_PAYMENT_ADDRESS=3FnVBg4zFyJkRGmjuFg9sk5fAY7i6pdJXm \
       idstudios/nicehash-miner:latest
 
