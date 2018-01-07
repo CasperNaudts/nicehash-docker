@@ -1,0 +1,63 @@
+{
+  "volumes": null,
+  "id": "/nicehash-miner-lg",
+  "cmd": null,
+  "args": null,
+  "user": null,
+  "env": {
+    "BTC_PAYMENT_ADDRESS": "3FnVBg4zFyJkRGmjuFg9sk5fAY7i6pdJXm",
+    "BTC_THREADS": "4"
+  },
+  "constraints": [
+    [
+      "hostname",
+      "LIKE",
+      "192.168.5.67"
+    ],
+    [
+      "hostname",
+      "UNIQUE"
+    ]
+  ],
+  "instances": 1,
+  "cpus": 6,
+  "mem": 2048,
+  "disk": 0,
+  "gpus": 0,
+  "executor": null,
+  "fetch": null,
+  "storeUrls": null,
+  "backoffSeconds": 1,
+  "backoffFactor": 1.15,
+  "maxLaunchDelaySeconds": 3600,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "idstudios/nicehash-miner:latest",
+      "network": "BRIDGE",
+      "privileged": false,
+      "forcePullImage": true
+    }
+  },
+  "healthChecks": [
+    {
+      "protocol": "COMMAND",
+      "command": { "value": "ps -ef | grep -q nheqminer_cpu" },
+      "gracePeriodSeconds": 300,
+      "intervalSeconds": 60,
+      "timeoutSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ],
+  "readinessChecks": null,
+  "dependencies": null,
+  "upgradeStrategy": {
+    "minimumHealthCapacity": 0,
+    "maximumOverCapacity": 0
+  },
+  "acceptedResourceRoles": null,
+  "residency": null,
+  "secrets": null,
+  "taskKillGracePeriodSeconds": null,
+  "requirePorts": false
+}
