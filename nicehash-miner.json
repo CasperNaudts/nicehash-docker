@@ -1,6 +1,6 @@
 {
   "volumes": null,
-  "id": "/nicehash-miner-lg",
+  "id": "/nicehash-miner",
   "cmd": null,
   "args": null,
   "user": null,
@@ -11,8 +11,13 @@
   "constraints": [
     [
       "hostname",
-      "LIKE",
-      "192.168.5.67"
+      "UNLIKE",
+      "192.168.5.6[6-7]"
+    ],
+    [
+      "hostname",
+      "UNLIKE",
+      "192.168.5.64"
     ],
     [
       "hostname",
@@ -20,7 +25,7 @@
     ]
   ],
   "instances": 1,
-  "cpus": 6,
+  "cpus": 5,
   "mem": 2048,
   "disk": 0,
   "gpus": 0,
